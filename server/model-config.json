@@ -33,7 +33,7 @@
     "public": false
   },
   "invite": {
-    "dataSource": "localmongo",
+    "dataSource": "local-mongo",
     "public": true
   }
 }

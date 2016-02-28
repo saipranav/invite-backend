@@ -46,8 +46,47 @@ function checkTheDatabaseForId(Invite, emailId, next){
 				next(error);
 			}
 			else{
-				next();
+				triggerInvite(emailId, next);
 			}
 		}
 	});
+}
+
+function triggerInvite(emailId, next) {
+	// Hit person rest endpint and check for email in response
+	request.post({
+	  headers: {'content-type' : 'application/json'},
+	  url:     serviceEndpoint.triggerEmail(),
+	  form:    {
+				  "from": "saipranav.ravichandran@listertechnologies.com",
+				  "to": [
+				    emailId
+				  ],
+				  "bcc": ["daffodil@listertechnologies.com"],
+				  "html": "invite",
+				  "subject": "FASTEST KT INVITE TEST"
+				}
+
+	}, function(err, res, body){
+		if(err){
+			console.error("Email Service is down\n", err);
+			var error = new Error("Error in sending invite from Invite service");
+			error.statusCode = 500;
+			//implement message queue like apache kafka then uncomment
+			//next(error);
+		}
+		if(JSON.parse(body).id){
+			//implement message queue like apache kafka then uncomment
+			//next();
+		}
+		else{
+			var error = new Error("Error in sending invite from Invite service");
+			error.statusCode = 400;
+			console.error(error.toString());
+			//implement message queue like apache kafka then uncomment
+			//next(error);
+		}
+	});
+	//remove the line after implementing apache kafka message queue
+	next();
 }

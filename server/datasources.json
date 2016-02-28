@@ -3,11 +3,8 @@
     "name": "db",
     "connector": "memory"
   },
-  "localmongo": {
-    "host": "localhost",
-    "port": 27017,
-    "database": "Invite",
-    "name": "localmongo",
+  "local-mongo": {
+    "name": "local-mongo",
     "connector": "mongodb"
   }
 }
