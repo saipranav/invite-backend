@@ -1,4 +1,5 @@
-module.exports = function enableAuthentication(server) {
-  // enable authentication
+module.exports = function enableAuthentication ( server ) {
+
+  // Enable authentication
   server.enableAuth();
 };

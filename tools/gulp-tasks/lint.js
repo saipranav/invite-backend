@@ -1,8 +1,11 @@
-module.exports = function(gulp, config, plugins){
-	return function(){
-		gulp.src(['server/**/*.js', 'tools/**/*.js'])
-			.pipe(plugins.plumber())
-			.pipe(plugins.jshint())
-			.pipe(plugins.jshint.reporter(plugins.jshint_stylish));
-	};
+module.exports = function ( gulp , config , plugins ) {
+  return function ( ) {
+    gulp.src( [ "server/**/*.js" ,
+                "tests/**/*.js" ,
+                "tools/**/*.js" ,
+                "gulpfile.js" ] )
+        .pipe( plugins.plumber() )
+        .pipe( plugins.jscs() )
+        .pipe( plugins.jscs.reporter() );
+  };
 };
