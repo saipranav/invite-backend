@@ -13,7 +13,7 @@
 
 Invite backend provides all the email id of an organisation who are invited to a session.
 
-This is built on top of standard loopback project loopback].
+This is built on top of standard loopback project [loopback].
 > NOTE: I am still learning and using this to get the best pratices with loads of experiments even like with camelCase or snake_case for readablilty. So, it may not be the best defacto thing to start if you are learning from this repo. 
 
    [loopback]: <https://github.com/strongloop/loopback>
