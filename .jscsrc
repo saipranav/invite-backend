@@ -11,7 +11,6 @@
 	"disallowTrailingComma": true,
 	"disallowTrailingWhitespace": true,
 	"disallowUnusedParams": true,
-	"maximumLineLength": 80,
 	"maximumNumberOfLines": { "value" : 200 , "allExcept" : ["comments"] },
 	"requireAlignedMultilineParams": "firstParam",
 	"requireBlocksOnNewline": {

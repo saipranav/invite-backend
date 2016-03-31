@@ -1,6 +1,5 @@
 var loopback = require ( "loopback" );
 var boot = require ( "loopback-boot" );
-
 var app = loopback();
 
 module.exports = app;
